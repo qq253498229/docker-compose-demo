@@ -5,6 +5,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"
     volumes:
       - "./docker/data/mysql:/var/lib/mysql"
       - "./docker/config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf"
