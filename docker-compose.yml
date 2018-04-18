@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7.21
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Shanghai
+    volumes:
+      - "./docker/data/mysql:/var/lib/mysql"
+      - "./docker/config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf"
+  redis:
+    image: redis:3.2.11
+    ports:
+      - "6379:6379"
+    environment:
+      TZ: Asia/Shanghai
