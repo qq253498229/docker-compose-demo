@@ -1,0 +1,18 @@
+version: "3"
+services:
+  eureka1: &eureka
+    image: registry.cn-beijing.aliyuncs.com/wangdali/center-eureka
+    environment:
+      TZ: Asia/Shanghai
+#      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka1:8761/eureka/,http://eureka2:8761/eureka/,http://eureka3:8761/eureka/,http://eureka4:8761/eureka/,http://eureka:8761/eureka/
+  eureka2:
+    <<: *eureka
+  eureka3:
+    <<: *eureka
+  eureka4:
+    <<: *eureka
+  eureka:
+    <<: *eureka
+    ports:
+      - "8761:8761"

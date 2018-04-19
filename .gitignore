@@ -2,3 +2,7 @@
 *.iml
 .DS_Store
 docker/data
+
+# maven
+.mvn
+mvn*

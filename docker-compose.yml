@@ -31,3 +31,10 @@ services:
       - "6379:6379"
     environment:
       TZ: Asia/Shanghai
+  eureka:
+    image: registry.cn-beijing.aliyuncs.com/wangdali/center-eureka
+    environment:
+      TZ: Asia/Shanghai
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
+    ports:
+      - "8761:8761"
